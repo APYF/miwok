@@ -2,4 +2,5 @@
 <resources>
     <dimen name="list_item_height">88dp</dimen>
     <dimen name="list_item_left_padding">16dp</dimen>
+    <dimen name="ic_size">24dp</dimen>
 </resources>
