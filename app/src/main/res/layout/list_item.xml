@@ -9,7 +9,7 @@
         android:id="@+id/word_image"
         android:layout_width="@dimen/list_item_height"
         android:layout_height="@dimen/list_item_height"
-        android:src="@mipmap/ic_launcher"/>
+        android:src="@mipmap/ic_launcher" />
 
     <LinearLayout
         android:id="@+id/list_item_text_layout"
