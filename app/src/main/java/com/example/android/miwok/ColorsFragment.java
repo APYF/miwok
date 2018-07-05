@@ -18,7 +18,7 @@ import java.util.ArrayList;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class NumbersFragment extends Fragment {
+public class ColorsFragment extends Fragment {
 
     private MediaPlayer mMediaPlayer;
 
@@ -78,7 +78,7 @@ public class NumbersFragment extends Fragment {
         }
     }
 
-    public NumbersFragment() {
+    public ColorsFragment() {
         // Required empty public constructor
     }
 
@@ -87,7 +87,6 @@ public class NumbersFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.words_list, container, false);
 
-        /** TODO: Insert all the code from the NumberActivity’s onCreate() method after the setContentView method call */
         super.onCreate(savedInstanceState);
 
         // Create and setup the {@link AudioManager} to request audio focus
@@ -95,28 +94,16 @@ public class NumbersFragment extends Fragment {
 
         final ArrayList<com.example.android.miwok.Word> words = new ArrayList<com.example.android.miwok.Word>();
 
-        words.add(new com.example.android.miwok.Word("one", "lutti", R.drawable.number_one, R.raw.number_one));
-        words.add(new com.example.android.miwok.Word("two", "otiiko", R.drawable.number_two, R.raw.number_two));
-        words.add(new com.example.android.miwok.Word("three", "tolookosu", R.drawable.number_three, R.raw.number_three));
-        words.add(new com.example.android.miwok.Word("four", "oyyisa", R.drawable.number_four, R.raw.number_four));
-        words.add(new com.example.android.miwok.Word("five", "massokka", R.drawable.number_five, R.raw.number_five));
-        words.add(new com.example.android.miwok.Word("six", "temmokka", R.drawable.number_six, R.raw.number_six));
-        words.add(new com.example.android.miwok.Word("seven", "kenekaku", R.drawable.number_seven, R.raw.number_seven));
-        words.add(new com.example.android.miwok.Word("eight", "kawinta", R.drawable.number_eight, R.raw.number_eight));
-        words.add(new com.example.android.miwok.Word("nine", "wo’e", R.drawable.number_nine, R.raw.number_nine));
-        words.add(new com.example.android.miwok.Word("ten", "na’aacha", R.drawable.number_ten, R.raw.number_ten));
+        words.add(new com.example.android.miwok.Word("red", "weṭeṭṭi", R.drawable.color_red, R.raw.color_red));
+        words.add(new com.example.android.miwok.Word("green", "chokokki", R.drawable.color_green, R.raw.color_green));
+        words.add(new com.example.android.miwok.Word("brown", "ṭakaakki", R.drawable.color_brown, R.raw.color_brown));
+        words.add(new com.example.android.miwok.Word("gray", "ṭopoppi", R.drawable.color_gray, R.raw.color_gray));
+        words.add(new com.example.android.miwok.Word("black", "kululli", R.drawable.color_black, R.raw.color_black));
+        words.add(new com.example.android.miwok.Word("white", "kelelli", R.drawable.color_white, R.raw.color_white));
+        words.add(new com.example.android.miwok.Word("dusty yellow","ṭopiisә",R.drawable.color_dusty_yellow, R.raw.color_dusty_yellow));
+        words.add(new com.example.android.miwok.Word("mustard yellow", "chiwiiṭә", R.drawable.color_mustard_yellow, R.raw.color_mustard_yellow));
 
-/**
- * The following is the default usage of ArrayAdapter when words array is a list of String  .. simple layout using android pre defined simple_list_item_1
- *
- ArrayAdapter<String> itemsAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, words);
-
- ListView listView = (ListView) findViewById(R.id.list);
-
- listView.setAdapter(itemsAdapter);
- **/
-
-        com.example.android.miwok.WordAdapter wordAdapter = new com.example.android.miwok.WordAdapter(getActivity(), words, R.color.category_numbers);
+        com.example.android.miwok.WordAdapter wordAdapter = new com.example.android.miwok.WordAdapter(getActivity(), words, R.color.category_colors);
 
         ListView listView = (ListView) rootView.findViewById(R.id.list);
         listView.setAdapter(wordAdapter);

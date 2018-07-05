@@ -18,7 +18,7 @@ import java.util.ArrayList;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class NumbersFragment extends Fragment {
+public class FamilyFragment extends Fragment {
 
     private MediaPlayer mMediaPlayer;
 
@@ -78,7 +78,7 @@ public class NumbersFragment extends Fragment {
         }
     }
 
-    public NumbersFragment() {
+    public FamilyFragment() {
         // Required empty public constructor
     }
 
@@ -87,7 +87,6 @@ public class NumbersFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.words_list, container, false);
 
-        /** TODO: Insert all the code from the NumberActivity’s onCreate() method after the setContentView method call */
         super.onCreate(savedInstanceState);
 
         // Create and setup the {@link AudioManager} to request audio focus
@@ -95,28 +94,18 @@ public class NumbersFragment extends Fragment {
 
         final ArrayList<com.example.android.miwok.Word> words = new ArrayList<com.example.android.miwok.Word>();
 
-        words.add(new com.example.android.miwok.Word("one", "lutti", R.drawable.number_one, R.raw.number_one));
-        words.add(new com.example.android.miwok.Word("two", "otiiko", R.drawable.number_two, R.raw.number_two));
-        words.add(new com.example.android.miwok.Word("three", "tolookosu", R.drawable.number_three, R.raw.number_three));
-        words.add(new com.example.android.miwok.Word("four", "oyyisa", R.drawable.number_four, R.raw.number_four));
-        words.add(new com.example.android.miwok.Word("five", "massokka", R.drawable.number_five, R.raw.number_five));
-        words.add(new com.example.android.miwok.Word("six", "temmokka", R.drawable.number_six, R.raw.number_six));
-        words.add(new com.example.android.miwok.Word("seven", "kenekaku", R.drawable.number_seven, R.raw.number_seven));
-        words.add(new com.example.android.miwok.Word("eight", "kawinta", R.drawable.number_eight, R.raw.number_eight));
-        words.add(new com.example.android.miwok.Word("nine", "wo’e", R.drawable.number_nine, R.raw.number_nine));
-        words.add(new com.example.android.miwok.Word("ten", "na’aacha", R.drawable.number_ten, R.raw.number_ten));
+        words.add(new com.example.android.miwok.Word("father", "әpә", R.drawable.family_father, R.raw.family_father));
+        words.add(new com.example.android.miwok.Word("mother", "әṭa", R.drawable.family_mother, R.raw.family_mother));
+        words.add(new com.example.android.miwok.Word("son", "angsi", R.drawable.family_son, R.raw.family_son));
+        words.add(new com.example.android.miwok.Word("daughter", "tune", R.drawable.family_daughter, R.raw.family_daughter));
+        words.add(new com.example.android.miwok.Word("older brother", "taachi", R.drawable.family_older_brother, R.raw.family_older_brother));
+        words.add(new com.example.android.miwok.Word("younger brother", "chalitti", R.drawable.family_younger_brother, R.raw.family_younger_brother));
+        words.add(new com.example.android.miwok.Word("older sister", "teṭe", R.drawable.family_older_sister, R.raw.family_older_sister));
+        words.add(new com.example.android.miwok.Word("younger sister", "kolliti", R.drawable.family_younger_sister, R.raw.family_younger_sister));
+        words.add(new com.example.android.miwok.Word("grandmother", "ama", R.drawable.family_grandmother, R.raw.family_grandmother));
+        words.add(new com.example.android.miwok.Word("grandfather", "paapa", R.drawable.family_grandfather, R.raw.family_grandfather));
 
-/**
- * The following is the default usage of ArrayAdapter when words array is a list of String  .. simple layout using android pre defined simple_list_item_1
- *
- ArrayAdapter<String> itemsAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, words);
-
- ListView listView = (ListView) findViewById(R.id.list);
-
- listView.setAdapter(itemsAdapter);
- **/
-
-        com.example.android.miwok.WordAdapter wordAdapter = new com.example.android.miwok.WordAdapter(getActivity(), words, R.color.category_numbers);
+        com.example.android.miwok.WordAdapter wordAdapter = new com.example.android.miwok.WordAdapter(getActivity(), words, R.color.category_family);
 
         ListView listView = (ListView) rootView.findViewById(R.id.list);
         listView.setAdapter(wordAdapter);
@@ -127,7 +116,6 @@ public class NumbersFragment extends Fragment {
                 // Release the media if it current exists because we want to play a different
                 // sound file
                 releaseMediaPlayer();
-
 
                 // Request audio focus for playback
                 int result = mAudioManager.requestAudioFocus(mOnAudioFocusChangeListener,
